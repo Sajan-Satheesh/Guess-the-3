@@ -56,18 +56,19 @@ void Title_Screen::Main_Options()
 	}
 }
 
-void Title_Screen::Pause_Options()
+int Title_Screen::Pause_Options()
 {
 	Main_Heading();
 	cout << "\n\nRestart level - " << continuegame << "   Quit game - " << quitgame <<endl;
 	cin >> input;
-	if (input == continuegame)
+	if (input==continuegame)
 	{
 		gameplay(currlevel);
 	}
-	else if (input == quitgame)
+	else if (input==quitgame)
 	{
 		cout << "\nThanks for playing!!\nSee you soon!" << endl; 
+		return 0;
 	}
 	else
 	{
@@ -105,7 +106,7 @@ void Title_Screen::Credit_Options()
 
 void Title_Screen::gameplay(int levelnum) {
 
-	while (levelnum<=finallevel) {
+	while (levelnum<=finallevel && input!=quitgame) {
 		cout << "\n\n\nWelcome to the level " << levelnum << endl;
 		int difficulty = 1;
 		RAND_MAX;
@@ -165,7 +166,7 @@ void Title_Screen::gameplay(int levelnum) {
 			difficulty++;
 			currlevel = levelnum;
 		}
-		else
+		else if(input != quitgame)
 		{
 			cout << "\n\n\n\n\n\n\n\n                      WRONG GUESS! level failed," << endl;
 			cout << "                      T  R  Y - A  G  A  I  N  !\n\n\n\n\n\n\n\n" << endl;
