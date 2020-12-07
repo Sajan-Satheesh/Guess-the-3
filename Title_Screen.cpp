@@ -9,7 +9,7 @@ Title_Screen::Title_Screen() {}
 
 Title_Screen::~Title_Screen() {}
 
-void Title_Screen::Main_Heading() {
+inline void Title_Screen::Main_Heading() {
 	cout << "\n\n\n\n\n\n\n          _____________________________      " << endl;
 	cout << "         |                             |      " << endl;
 	cout << "         |    GUESS  _ THE _  THREE    |      " << endl;
@@ -47,7 +47,8 @@ void Title_Screen::Main_Options()
 	}
 	else if (input == quitgame)
 	{
-		cout << "\nThanks for playing!!\nSee you soon!" << endl;
+		Main_Heading();
+		cout << "               Thanks for playing!!\n                   See you soon!\n\n\n\n\n\n\n" << endl;
 	}
 	else
 	{
@@ -56,7 +57,7 @@ void Title_Screen::Main_Options()
 	}
 }
 
-int Title_Screen::Pause_Options()
+void Title_Screen::Pause_Options()
 {
 	Main_Heading();
 	cout << "\n\nRestart level - " << continuegame << "   Quit game - " << quitgame <<endl;
@@ -67,8 +68,8 @@ int Title_Screen::Pause_Options()
 	}
 	else if (input==quitgame)
 	{
-		cout << "\nThanks for playing!!\nSee you soon!" << endl; 
-		return 0;
+		Main_Heading();
+		cout << "               Thanks for playing!!\n                   See you soon!\n\n\n\n\n\n\n" << endl;
 	}
 	else
 	{
@@ -95,7 +96,8 @@ void Title_Screen::Credit_Options()
 	}
 	else if (input == quitgame)
 	{
-		cout << "\nThanks for playing!!\nSee you soon!" << endl;
+		Main_Heading();
+		cout << "               Thanks for playing!!\n                   See you soon!\n\n\n\n\n\n\n" << endl;
 	}
 	else
 	{

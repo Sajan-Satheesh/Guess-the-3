@@ -21,7 +21,7 @@ public:
 	void Main_Heading();
 	void Main_Options();
 	void Select_Level();
-	int Pause_Options();
+	void Pause_Options();
 	void Credit_Options();
 	void gameplay(int levelnum);
 };
